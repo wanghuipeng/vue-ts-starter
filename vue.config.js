@@ -1,20 +1,8 @@
 module.exports = {
     devServer: {
-        // proxy: {
-        //     '/api': {
-        //         target: 'http://www.example.org',
-        //         changeOrigin: true,
-        //         ws: true,
-        //         pathRewrite: {
-        //           '^/api': ''
-        //         }
-        //     }
-        // }
+        //proxy: 'http://127.0.0.1:8080/static'
     },
     publicPath: process.env.NODE_ENV === 'production' ?
         '/vue-ts/' : '/',
-    outputDir: 'vue-ts',
-    devServer: {
-        port: '3030'
-    }
+    outputDir: 'vue-ts'
 }
