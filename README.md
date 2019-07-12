@@ -29,5 +29,3 @@ npm run lint
 See [Configuration Reference](https://cli.vuejs.org/config/).
 # vue-cli3-typescript
 
-###线上预览
-[demo](https://no2015.github.io/vue-ts/)

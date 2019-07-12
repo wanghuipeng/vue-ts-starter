@@ -1,57 +1,39 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Home from './views/Home.vue';
 
 Vue.use(Router);
 
+const scrollBehavior = (to, from, savedPosition) => {
+  if (to.hash) {
+    return { selector: to.hash };
+  }
+};
+
 export default new Router({
-  mode: 'history',
+  mode: 'hash',
   base: process.env.BASE_URL,
+  scrollBehavior,
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: Home,
+      name: 'demo',
+      component: () => import('./views/demo/demo.vue'),
       meta: {
         keepAlive: true,
         scrollTop: 0,
       },
     },
+    // demo页
     {
-      path: '/goods/:id',
-      name: 'goods',
-      component: () => import('./views/Goods.vue'),
+      path: '/demo',
+      name: 'demo',
+      component: () => import('./views/demo/demo.vue'),
     },
+    // demo详情页
     {
-      path: '/cart',
-      name: 'cart',
-      component: () => import('./views/Cart.vue'),
-    },
-    {
-      path: '/center',
-      name: 'center',
-      component: () => import('./views/Center.vue'),
-      children: [
-        {
-          path: 'setting',
-          component: () => import('./components/center/Setting.vue'),
-        },
-      ],
-    },
-    {
-      path: '/search',
-      name: 'search',
-      component: () => import('./views/Search.vue'),
-    },
-    {
-      path: '/cate',
-      name: 'cate',
-      component: () => import('./views/Cate.vue'),
-    },
-    {
-      path: '/order',
-      name: 'order',
-      component: () => import('./views/Order.vue'),
+      path: '/demoDetail',
+      name: 'demoDetail',
+      component: () => import('./views/demo/demoDetail.vue'),
     },
   ],
 });

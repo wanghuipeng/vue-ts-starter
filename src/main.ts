@@ -3,8 +3,8 @@ import App from './App.vue';
 import router from './router';
 import store from './store';
 import { Component } from 'vue-property-decorator';
-import './assets/styles.less';
-import storage from './global/storage';
+import './assets/less/main.less';
+import storage from './utils/storage';
 import { Route } from 'vue-router';
 
 Vue.prototype.$storage = storage;
