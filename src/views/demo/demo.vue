@@ -33,7 +33,7 @@ export default class Demo extends Vue {
       pageNumber: 1,
       pageSize: 15,
       longitude: 121.4843088996449,
-      latitude: 31.33302964169,
+      latitude: 31.33302964169
     };
     findCourseList(params)
       .then((res) => {
